@@ -1,0 +1,10 @@
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
+.category-navbar {
+    height: 10vh;
+    border-top: 10px solid red;
+    border-bottom: 3px solid red;
+    font-weight: 500;
+}
