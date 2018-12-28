@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Nav, NavItem } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Navbar, Nav, NavItem, NavLink } from "reactstrap";
 import "./Categories.css";
 
 class Categories extends Component {
@@ -11,29 +10,29 @@ class Categories extends Component {
         <Navbar color="light" light expand="md" className="category-navbar">
           <Nav navbar>
             <NavItem color="danger">
-              <Link to="/" className="mx-5">
+              <NavLink href="/" className="mx-5">
                 Home
-              </Link>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <Link to="/deals/" className="mx-5">
+              <NavLink href="/deals/" className="mx-5">
                 Hot Deals
-              </Link>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <Link to="/coffees/" className="mx-5">
+              <NavLink href="/coffees/" className="mx-5">
                 Coffees
-              </Link>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <Link to="/teas/" className="mx-5">
+              <NavLink href="/teas/" className="mx-5">
                 Teas
-              </Link>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <Link to="/accessories/" className="mx-5">
+              <NavLink href="/accessories/" className="mx-5">
                 Accessories
-              </Link>
+              </NavLink>
             </NavItem>
           </Nav>
         </Navbar>
