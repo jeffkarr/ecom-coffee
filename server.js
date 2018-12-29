@@ -1,19 +1,25 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3000;
+const bodyParser = require("body-parser");
+
 const app = express();
 
-app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, "build")));
+const PORT = process.env.PORT || 5000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/ping', function (req, res) {
   return res.send('pong');
 });
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+};
 
-app.listen(PORT, function() {
-  console.log(`🌎  ==> Server now listening on PORT ${PORT}!`);
-});
+app.listen(PORT, () => `Server running on port ${PORT}`);
