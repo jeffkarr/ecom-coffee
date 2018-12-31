@@ -8,11 +8,14 @@ import CoffeePage from "./pages/CoffeePage";
 import TeaPage from "./pages/TeaPage";
 import AccessoryPage from "./pages/AccessoryPage";
 import DealPage from "./pages/DealPage";
+import CartPage from "./pages/CartPage";
+import WishPage from "./pages/WishPage";
+
+//import './bootstrap.min.css';
 
 class App extends Component {
   render() {
-    return (
-      <Router>
+    return <Router>
         <div>
           <CustomNavbar />
           <Categories />
@@ -22,10 +25,11 @@ class App extends Component {
             <Route exact path="/teas/" component={TeaPage} />
             <Route exact path="/accessories/" component={AccessoryPage} />
             <Route exact path="/deals/" component={DealPage} />
+            <Route exact path="/cart/" component={CartPage} />
+            <Route exact path="/wish/" component={WishPage} />
           </Switch>
         </div>
-      </Router> 
-    );
+      </Router>;
   }
 }
 

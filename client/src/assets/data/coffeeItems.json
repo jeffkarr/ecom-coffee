@@ -1,34 +1,38 @@
 {
   "coffeeItems": [
-    {
+    { "id": "C1",
       "category": "coffee",
-      "name": "Sumatra Mandheling Coffee",
+      "name": "Sumatra Coffee",
       "price": "8.00",
       "description": "some of the finest arabica coffees",
       "image": "../images/sumatra-coffee.png"
     },
-    {
+    { 
+      "id": "C2",
       "category": "coffee",
       "name": "Java Coffee",
       "price": "7.00",
       "description": "one of the most popular Indonesian coffees from the island of Java in Indonesia.",
       "image": "../images/java-coffee.jpg"
     },
-    {
+    { 
+      "id": "C3",
       "category": "coffee",
       "name": "Jamaican Blue Mountain Coffee",
       "price": "10.00",
       "description": "from the Blue Mountain region of Jamaica.",
       "image": "../images/jamaican-coffee.png"
     },
-    {
+    { 
+      "id": "C4",
       "category": "coffee",
       "name": "Hawaiian Kona Coffee",
       "price": "10.00",
       "description": "along the western side of the big island of Hawaii, Kona coffee farms.", 
       "image": "../images/kona-coffee.jpg"
     },
-    {
+    { 
+      "id": "C5",
       "category": "coffee",
       "name": "Costa Rican Coffee",
       "price": "9.00",
@@ -36,6 +40,7 @@
       "image": "../images/costa-rican-coffee.png"
     },
     {
+      "id": "C6",
       "category": "coffee",
       "name": "Guatemalan Coffee",
       "price": "8.00",
