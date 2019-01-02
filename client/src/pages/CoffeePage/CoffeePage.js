@@ -1,43 +1,37 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Container, Row } from "reactstrap";
 import { Card, CardImg, CardDeck, CardBody, Button } from "reactstrap";
+import PropTypes from "prop-types";
+import { fetchCoffeeItems, addCoffeeToCart } from "../../actions/coffeeActions";
 
-import coffeeJson from "../../assets/data/coffeeItems.json";
 import "./CoffeePage.css";
 
 class CoffeePage extends Component {
-  constructor() {
-    super();
-    let coffeeItemsArray = coffeeJson.coffeeItems;
-    this.state = {
-      coffeeItems: coffeeItemsArray
-    };
+  constructor(props) {
+    super(props);
+    this.addToCart = this.addToCart.bind(this);
+    this.addToWishList = this.addToWishList.bind(this);
 
-// ----------------------------------------------------------    
-//    console.log(
-//        "this.state.coffeeItems is " +
-//          JSON.stringify(this.state.coffeeItems, null, 2)
-//    );
-// ----------------------------------------------------------
+    this.props.fetchCoffeeItems();
+  };
 
-  }
   addToWishList(event) {
     console.log(event.target);
     alert("item " + event.target.id);
-  }; 
+  };
   addToCart(event) {
-    console.log(event.target);
-    alert("item " + event.target.id);
-  }; 
+    let cartCoffeeItemId = event.target.id;
+    this.props.addCoffeeToCart(cartCoffeeItemId);
+  };
 
   render() {
- 
     return (
       <section>
         <Container fluid>
-          {this.state.coffeeItems.length ? (
+          {this.props.coffeeItemsArray.length ? (
             <CardDeck className="mt-5">
-              {this.state.coffeeItems.map(item => (
+              {this.props.coffeeItemsArray.map(item => (
                 <Card key={item.id}>
                   <CardImg src={item.image} />
                   <CardBody className="text-center">
@@ -49,10 +43,20 @@ class CoffeePage extends Component {
                     <Row>
                       <p>{item.price}</p>
                     </Row>
-                    <Button onClick={this.addToWishList.bind(this)} id={item.id} color="danger" className="btn btn-sm">
+                    <Button
+                      onClick={this.addToWishList}
+                      id={item.id}
+                      color="danger"
+                      className="btn btn-sm"
+                    >
                       <i className="far fa-heart" /> Wish List
                     </Button>
-                    <Button onClick={this.addToCart.bind(this)} id={item.id} color="danger" className="m-2 btn btn-sm">
+                    <Button
+                      onClick={this.addToCart}
+                      id={item.id}
+                      color="danger"
+                      className="m-2 btn btn-sm"
+                    >
                       <i className="fas fa-cart-plus mr-1" />
                       Add to Cart
                     </Button>
@@ -71,4 +75,17 @@ class CoffeePage extends Component {
   }
 }
 
-export default CoffeePage;
+CoffeePage.propTypes = {
+  fetchCoffeeItems: PropTypes.func.isRequired,
+  coffeeItemsArray: PropTypes.array.isRequired,
+  addCoffeeToCart: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  coffeeItemsArray: state.coffeeItemsArray.coffeeItems
+});
+
+export default connect(
+  mapStateToProps,
+  { fetchCoffeeItems, addCoffeeToCart }
+)(CoffeePage);

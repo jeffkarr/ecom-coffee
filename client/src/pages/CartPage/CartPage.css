@@ -1,0 +1,25 @@
+.billingForm {
+  background-color: white;
+  padding: 2em;
+  margin-top: 1em;
+  border: 2px solid grey;
+}
+
+#shoppingNav {
+  height: 15vh;
+  margin-top: 1em;
+  font-weight: 800;
+  text-align: center;
+  border: 2px solid grey;
+}
+
+#shopping {
+  margin-bottom: 0;
+}
+
+.cart-area {
+  background-color: white;
+  padding: 2em;
+  margin: 1em 0 1em 1em;
+  border: 2px solid grey;
+}

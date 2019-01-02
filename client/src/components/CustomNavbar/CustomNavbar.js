@@ -20,8 +20,8 @@ class CustomNavbar extends Component {
     this.toggle = this.toggle.bind(this);
     this.toggleWishModal = this.toggleWishModal.bind(this);
     this.toggleCartModal = this.toggleCartModal.bind(this);
-    this.redirectToWishPage = this.redirectToWishPage.bind(this);
-    this.redirectToCartPage = this.redirectToCartPage.bind(this);
+//    this.redirectToWishPage = this.redirectToWishPage.bind(this);
+//    this.redirectToCartPage = this.redirectToCartPage.bind(this);
 
     this.state = {
       isOpen: false,
@@ -50,12 +50,12 @@ class CustomNavbar extends Component {
     });
   }
 
-  redirectToWishPage() {
-    window.location.href = "/wish/";
-  }
-  redirectToCartPage() {
-    window.location.href = "/cart/";
-  }
+//  redirectToWishPage() {
+//    window.location.href = "/wish/";
+//  }
+//  redirectToCartPage() {
+//    window.location.href = "/cart/";
+//  }
 
   render() {
     return (
@@ -118,7 +118,7 @@ class CustomNavbar extends Component {
             <Button
               color="danger"
               href="/wish/"
-              onClick={this.toggleWishModal & this.redirectToWishPage}
+         //     onClick={this.toggleWishModal & this.redirectToWishPage}
           >
             See Wishlist
             </Button>
@@ -146,7 +146,7 @@ class CustomNavbar extends Component {
             <Button
               color="danger"
               href="/cart/"
-              onClick={this.toggleCartModal & this.redirectToCartPage}
+          //    onClick={this.toggleCartModal & this.redirectToCartPage}
             >
               See Cart
             </Button>
