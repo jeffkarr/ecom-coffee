@@ -1,20 +1,24 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import { Button, Form, Input } from "reactstrap";
-import { Navbar, NavbarBrand } from "reactstrap";
+import { Navbar } from "reactstrap";
+//import { Card, CardDeck, CardBody } from "reactstrap";
+import PropTypes from "prop-types";
+import { fetchCartItems } from "../../actions/cartActions";
 
 import "./CartPage.css";
 
 class CartPage extends Component {
-  //  componentWillReceiveProps(nextProps) {
-  //    if (nextProps.newCoffeeItem) {
-  //      // note: unshift adds newPost to the front of the posts array. Push would add it to the back.
-  //      this.props.coffeeItemsArray.unshift(nextProps.newCoffeeItem);
-  //    };
-  //  };
+  constructor(props) {
+    super(props);
+
+    this.props.fetchCartItems();
+  }
 
   render() {
+    console.log(this.props);
+
     return (
       <section>
         <Container fluid>
@@ -105,7 +109,6 @@ class CartPage extends Component {
                 <Container className="text-center">
                   <h2 className="mb-4 text-center">Your Order</h2>
                   <div>
-                    
                   </div>
                   <Button color="danger">Place Order</Button>
                 </Container>
@@ -118,4 +121,16 @@ class CartPage extends Component {
   }
 }
 
-export default CartPage;
+CartPage.propTypes = {
+  fetchCartItems: PropTypes.func.isRequired,
+//  cartItemsArray: PropTypes.array.isRequired,
+};
+
+const mapStateToProps = state => ({
+  cartStuff: state.cartStuff.cartItems
+});
+
+export default connect(
+  mapStateToProps,
+  { fetchCartItems }
+)(CartPage);

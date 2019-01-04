@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import { Container, Row } from "reactstrap";
 import { Card, CardImg, CardDeck, CardBody, Button } from "reactstrap";
 import PropTypes from "prop-types";
-import { fetchCoffeeItems, addCoffeeToCart } from "../../actions/coffeeActions";
+//import { fetchCoffeeItems, addCoffeeToCart } from "../../actions/coffeeActions";
+import { fetchCoffeeItems } from "../../actions/coffeeActions";
+import {addToCart } from "../../actions/cartActions";
 
 import "./CoffeePage.css";
 
@@ -22,7 +24,24 @@ class CoffeePage extends Component {
   };
   addToCart(event) {
     let cartCoffeeItemId = event.target.id;
-    this.props.addCoffeeToCart(cartCoffeeItemId);
+    let newCartItem = {};
+    console.log("cartCoffeeItemId is " + cartCoffeeItemId);
+    for (let i = 0; i < this.props.coffeeItemsArray.length; i++) {
+      console.log("id is " + this.props.coffeeItemsArray[i].id);
+      if (this.props.coffeeItemsArray[i].id === cartCoffeeItemId) {
+        newCartItem = {
+          id: this.props.coffeeItemsArray[i].id,
+          category: this.props.coffeeItemsArray[i].category,
+          name: this.props.coffeeItemsArray[i].name,
+          price: this.props.coffeeItemsArray[i].price,
+          description: this.props.coffeeItemsArray[i].description,
+          image: this.props.coffeeItemsArray[i].image
+        };
+        console.log(JSON.stringify(newCartItem));
+        break;
+      }
+    }
+    this.props.addToCart(newCartItem);
   };
 
   render() {
@@ -78,14 +97,15 @@ class CoffeePage extends Component {
 CoffeePage.propTypes = {
   fetchCoffeeItems: PropTypes.func.isRequired,
   coffeeItemsArray: PropTypes.array.isRequired,
-  addCoffeeToCart: PropTypes.func.isRequired
+//  addCoffeeToCart: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  coffeeItemsArray: state.coffeeItemsArray.coffeeItems
+  coffeeItemsArray: state.coffeeItemsArray.coffeeItems,
+  cartStuff: state.cartStuff.cartItems
 });
 
 export default connect(
   mapStateToProps,
-  { fetchCoffeeItems, addCoffeeToCart }
+  { fetchCoffeeItems, addToCart }
 )(CoffeePage);

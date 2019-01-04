@@ -1,8 +1,7 @@
-import { FETCH_COFFEE_ITEMS, ADD_COFFEE_TO_CART } from "../actions/types";
+import { FETCH_COFFEE_ITEMS } from "../actions/types";
 
 const initialState = {
-  coffeeItems: [],
-  cartItems: []
+  coffeeItems: []
 };
 
 export default function(state = initialState, action) {
@@ -11,17 +10,6 @@ export default function(state = initialState, action) {
       return { 
         ...state, 
         coffeeItems: action.payload 
-      };
-    case ADD_COFFEE_TO_CART:
-      let itemId = action.payload;
-      for (let i = 0; i < state.coffeeItems.length; i++) {
-        if (state.coffeeItems[i].id === itemId) {
-          state.cartItems.push(state.coffeeItems[i]);
-        }
-      }
-      return {
-        ...state, 
-        cartItems: state.cartItems
       };
     default:
       return state;
