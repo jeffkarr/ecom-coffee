@@ -1,16 +1,9 @@
-.billingForm {
-  background-color: white;
-  padding: 2em;
-  margin-top: 1em;
-  border: 2px solid grey;
-}
-
 #shoppingNav {
   height: 15vh;
   margin-top: 1em;
   font-weight: 800;
   text-align: center;
-  border: 2px solid grey;
+  border: 2px solid red;
 }
 
 #shopping {
@@ -19,7 +12,31 @@
 
 .cart-area {
   background-color: white;
+  margin: 1em 0 1em 0;
   padding: 2em;
-  margin: 1em 0 1em 1em;
-  border: 2px solid grey;
+  border: 2px solid red;
+  min-height: 916px;
+  min-width: 500px;
+}
+
+.table-item-name {
+  width: 8rem;
+}
+
+.billingForm {
+  background-color: white;
+  padding: 2em;
+  margin: 1em 0 1em 0;
+  border: 2px solid red;
+  min-height: 916px;
+  min-width: 400px;
+}
+
+.trash-can-div {
+  padding: 5px;
+  display: none;
+}
+
+.remove-cart-item-btn .trash-can-div {
+  display: block;
 }

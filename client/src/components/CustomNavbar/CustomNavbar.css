@@ -3,3 +3,10 @@
     background-color: black;
 }
 
+a.ml-1.navbar-brand {
+    font-size: 1.5rem;
+}
+
+table.cart-modal-table.table.table-borderless {
+    table-layout: fixed;
+}

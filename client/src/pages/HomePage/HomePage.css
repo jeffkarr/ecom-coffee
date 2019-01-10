@@ -1,8 +1,11 @@
 body {
     background-color: lightgrey;
 }
-img {
+.homepage-img {
     height: 247px;
+}
+#coffee-category-img, #tea-category-img, #accessories-category-img  {
+    height: 288px;
 }
 h5 {
     font-weight: 515;

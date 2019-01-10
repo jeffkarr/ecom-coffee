@@ -2,9 +2,22 @@
     color: black;
 }
 
+a.mx-4.nav-link {
+    color: black;
+    font-size: 1.1rem;
+}
+
+li.category-nav-item {
+    list-style-type: none;
+    background-color: white;
+    z-index: 1;
+}
+
 .category-navbar {
-    height: 10vh;
+    height: auto;
+    min-height: 60px;
     border-top: 10px solid red;
     border-bottom: 3px solid red;
     font-weight: 500;
+    font-size: 1.1rem;
 }

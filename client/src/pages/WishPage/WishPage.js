@@ -9,17 +9,23 @@ import { Container } from "reactstrap";
 //  CardDeck,
 //  CardBody
 //} from "reactstrap";
+import CustomNavbar from "../../components/CustomNavbar";
+import Categories from "../../components/Categories";
 
 import "./WishPage.css";
 
 class WishPage extends Component {
   render() {
     return (
-      <section>
-        <Container fluid>
-          <h2>Wish List Page</h2>
-        </Container>
-      </section>
+      <div>
+        <CustomNavbar />
+        <Categories />
+        <section>
+          <Container fluid>
+            <h2>Wish List Page</h2>
+          </Container>
+        </section>
+      </div>
     );
   }
 }

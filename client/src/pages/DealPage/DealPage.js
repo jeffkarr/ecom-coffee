@@ -9,9 +9,8 @@ import { Container } from "reactstrap";
 //  CardDeck,
 //  CardBody
 //} from "reactstrap";
-//import CoffeeImg1 from "../../assets/coffee-category-image.jpg";
-//import TeaImg1 from "../../assets/tea-category-image.jpg";
-//import AccessoriesImg1 from "../../assets/accessories-category-image.jpg";
+import CustomNavbar from "../../components/CustomNavbar";
+import Categories from "../../components/Categories";
 
 import "./DealPage.css";
 
@@ -22,11 +21,15 @@ class DealPage extends Component {
 
   render() {
     return (
-      <section>
-        <Container fluid>
-          <h2>Deal Page</h2>
-        </Container>
-      </section>
+      <div>
+        <CustomNavbar />
+        <Categories />
+        <section>
+          <Container fluid>
+            <h2>Deal Page</h2>
+          </Container>
+        </section>
+      </div>
     );
   }
 }
