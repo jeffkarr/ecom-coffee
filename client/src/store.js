@@ -28,7 +28,8 @@ export default initialState => {
   store.subscribe(() => {
     const state = store.getState();
     const persist = {
-      cart: state.cart
+      cart: state.cart,
+      wish: state.wish
     };
 
     window.localStorage.setItem('state', JSON.stringify(persist));

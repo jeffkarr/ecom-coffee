@@ -1,9 +1,8 @@
 import { FETCH_CART_ITEMS, 
         ADD_COFFEE_TO_CART,
         REMOVE_CART_ITEM, 
-        CART_CHECKOUT } from "./types";
-
-// we dispatch fetchCartItems to the cartReducer.
+        CART_CHECKOUT,
+        WISH_CHECKOUT } from "./types";
 
 export const fetchCartItems = () => dispatch => {
   dispatch({
@@ -28,5 +27,8 @@ export const removeCartItem = removeCartId => dispatch => {
 export const sendOrder = () => dispatch => {
   dispatch({
     type: CART_CHECKOUT
+  });
+  dispatch({
+    type: WISH_CHECKOUT
   });
 };

@@ -13,8 +13,7 @@ import {
 import { Row } from "reactstrap";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { Table } from "reactstrap";
-
-import { getCartItems, getCartCosts } from "../../reducers";
+import { getCartItems, getCartCosts, getWishItems } from "../../reducers";
 
 import "./CustomNavbar.css";
 
@@ -54,8 +53,6 @@ class CustomNavbar extends Component {
   }
 
   render() {
-    let cartItemsCount = this.props.cartItemsList.length;
-
     return (
       <div>
         <Navbar color="dark" dark expand="md">
@@ -71,7 +68,7 @@ class CustomNavbar extends Component {
                   <Row>
                     <i className="far fa-heart" />
                     <Badge color="danger" className="ml-2">
-                      0
+                      {this.props.wishItemsCount}
                     </Badge>
                   </Row>
                   <Row>Your Wishlist</Row>
@@ -82,7 +79,7 @@ class CustomNavbar extends Component {
                   <Row>
                     <i className="fas fa-shopping-cart" />
                     <Badge color="danger" className="ml-2">
-                      {cartItemsCount}
+                      {this.props.cartItemsCount}
                     </Badge>
                   </Row>
                   <Row>Your Cart</Row>
@@ -97,14 +94,48 @@ class CustomNavbar extends Component {
             Your Wish List
           </ModalHeader>
           <ModalBody>
-            <p>selected items will appear here.</p>
-            <p> along with a button to add to cart.</p>
+            {this.props.wishItemsList.length ?
+              (
+                <Table borderless className="wish-modal-table">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                      <th>Item Price($)</th>
+                      <th>Cost($)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.props.wishItemsList.map(item => (
+                      <tr key={item.wishId}>
+                        <td>
+                          <p>{item.name}</p>
+                        </td>
+                        <td className="text-center">
+                          <p>{item.quantity}</p>
+                        </td>
+                        <td>
+                          <p>{item.price}</p>
+                        </td>
+                        <td>
+                          <p>{(item.quantity * item.price).toFixed(2)}</p>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              )
+              :
+              (
+                <h6 className="mt-3">No items on wish list.</h6>
+              )
+            }
           </ModalBody>
           <ModalFooter>
             <Button color="danger" href="/wish/">
-              See Wishlist
+              Edit Wishlist
             </Button>
-            <Button color="secondary" onClick={this.toggleWishModal}>
+            <Button color="dark" onClick={this.toggleWishModal}>
               Cancel
             </Button>
           </ModalFooter>
@@ -114,43 +145,42 @@ class CustomNavbar extends Component {
           <ModalHeader toggle={this.toggleCartModal}>
             Your Shopping Cart
           </ModalHeader>
-          <ModalBody>
-            {!this.props.cartItemsList.length ? (
-              <h6 className="mt-3">No Items in cart.</h6>
-            ) : (
-              <Table borderless className="cart-modal-table">
-                <thead>
-                  <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Item Price($)</th>
-                    <th>Cost($)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.props.cartItemsList.map(item => (
+          <ModalBody >
+            {this.props.cartItemsList.length ? 
+              (
+                <Table borderless className="cart-modal-table">
+                  <thead>
                     <tr>
-                      <td key={item.cartId}>
-                        <p>{item.name}</p>
-                      </td>
-                      <td className="text-center">
-                        <p>{item.quantity}</p>
-                      </td>
-                      <td>
-                        <p>{item.price}</p>
-                      </td>
-                      <td>
-                        <p>{(item.quantity * item.price).toFixed(2)}</p>
-                      </td>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                      <th>Item Price($)</th>
+                      <th>Cost($)</th>
                     </tr>
-                  ))}
-                </tbody>
-                <tfoot>
+                  </thead>
+                  <tbody>
+                    {this.props.cartItemsList.map(item => (
+                      <tr key={item.cartId}>
+                        <td>
+                        <p>{item.name}</p>
+                        </td>
+                        <td className="text-center">
+                          <p>{item.quantity}</p>
+                        </td>
+                        <td>
+                          <p>{item.price}</p>
+                        </td>
+                        <td>
+                          <p>{(item.quantity * item.price).toFixed(2)}</p>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                  <tfoot>
                     <tr>
                       <th />
                       <th />
                       <th>Subtotal($)</th>
-                      <td>{(this.props.cartCosts.subtotal).toFixed(2)}</td>
+                      <td>{this.props.cartCosts.subtotal.toFixed(2)}</td>
                     </tr>
                     <tr>
                       <th />
@@ -162,19 +192,22 @@ class CustomNavbar extends Component {
                       <th />
                       <th />
                       <th> Your Total Cost ($)</th>
-                      <td>
-                        {(this.props.cartCosts.total).toFixed(2)}
-                      </td>
+                      <td>{this.props.cartCosts.total.toFixed(2)}</td>
                     </tr>
-                </tfoot>
-              </Table>
-            )}
+                  </tfoot>
+                </Table>
+              )
+              :
+              (
+                <h6 className="mt-3">No items in cart.</h6>
+              )
+            }
           </ModalBody>
           <ModalFooter>
             <Button color="danger" href="/cart/">
               Edit Cart
             </Button>
-            <Button color="secondary" onClick={this.toggleCartModal}>
+            <Button color="dark" onClick={this.toggleCartModal}>
               Cancel
             </Button>
           </ModalFooter>
@@ -184,8 +217,6 @@ class CustomNavbar extends Component {
   }
 }
 
-//export default CustomNavbar;
-
 //CustomNavbar.propTypes = {
 //  coffeeItemsCount: PropTypes.number.isRequired,
 //
@@ -194,7 +225,9 @@ class CustomNavbar extends Component {
 const mapStateToProps = state => ({
   cartItemsList: getCartItems(state),
   cartItemsCount: state.cart.cartItems.length,
-  cartCosts: getCartCosts(state)
+  cartCosts: getCartCosts(state),
+  wishItemsList: getWishItems(state),
+  wishItemsCount: state.wish.wishItems.length
 });
 
 export default connect(mapStateToProps)(CustomNavbar);

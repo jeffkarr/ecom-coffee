@@ -10,7 +10,6 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case FETCH_CART_ITEMS:
-      console.log(action);
       if(state.cartItems.length > 0)  {
         return state
       }
@@ -26,6 +25,9 @@ export default function (state = initialState, action) {
       };
     case REMOVE_CART_ITEM:
       let tempCart = state.cartItems.filter(cartTrxn => cartTrxn.cartId !== parseInt(action.payload));
+      if(tempCart === null) {
+        tempCart = [];
+      }
       return {
         cartItems: tempCart,
       };
@@ -36,4 +38,3 @@ export default function (state = initialState, action) {
       return state;
   }
 }
-

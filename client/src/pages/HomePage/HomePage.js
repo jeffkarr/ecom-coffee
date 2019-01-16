@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 import CustomNavbar from "../../components/CustomNavbar";
 import Categories from "../../components/Categories";
 import { Container } from "reactstrap";

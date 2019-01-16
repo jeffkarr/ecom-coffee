@@ -1,0 +1,29 @@
+#wishlistNav {
+  height: 15vh;
+  margin-top: 1em;
+  font-weight: 800;
+  text-align: center;
+  border: 2px solid red;
+}
+#wishlist {
+  margin-bottom: 0;
+}
+.wishlist-container {
+  width: 900px;
+  background-color: white;
+  margin-top: 5vh;
+  border: 2px solid red;
+}
+.table thead th {
+  margin-top: 5vh;
+}
+.wishlist-table td {
+  vertical-align: middle;
+}
+.wishlist-table td p {
+  margin-bottom: 0;
+}
+.wish-item-img {
+  width: 100px;
+  height: 100px;
+}

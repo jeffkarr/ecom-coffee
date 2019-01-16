@@ -10,3 +10,9 @@ a.ml-1.navbar-brand {
 table.cart-modal-table.table.table-borderless {
     table-layout: fixed;
 }
+
+.modal-header {
+    background-color: red;
+    border-bottom: 2px solid black;
+    color: white;
+}

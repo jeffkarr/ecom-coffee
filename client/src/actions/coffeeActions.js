@@ -3,8 +3,6 @@ import {
   ADD_COFFEE_TO_CART } from './types';
 import coffeeJson from "../assets/data/coffeeItems.json";
 
-// we dispatch fetchCoffeeItems to the coffeeReducer.
-
 export const fetchCoffeeItems = () => dispatch => {
     let coffeeItemsArray = coffeeJson.coffeeItems;
     dispatch({

@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 import coffeeReducer from "./coffeeReducer";
 import cartReducer from "./cartReducer";
+import wishReducer from "./wishReducer";
 
 export default combineReducers({
   coffee: coffeeReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  wish: wishReducer
 });
 
 export const getCartItems = state => {
@@ -12,18 +14,34 @@ export const getCartItems = state => {
   return cartItems;
 };
 
+export const getWishItems = state => {
+  let wishItems = state.wish.wishItems;
+  return wishItems;
+};
+
+export const getWishToCartItem = state => {
+  let wishToCartItem = state.wish.wishToCartItem;
+  return wishToCartItem;
+};
+
 export const getCartCosts = state => {
   let subtotalCost = 0;
   let totalCost = 0;
   let shippingFee = 10.00;
-  state.cart.cartItems.forEach(trxn => {
-    let trxnCost = trxn.quantity * trxn.price;
-    subtotalCost += trxnCost;
-  });
-  totalCost = subtotalCost + shippingFee;
   let cartCosts = {
-    subtotal: subtotalCost,
-    total: totalCost
+    subtotal: 0,
+    total: 0
+  };
+  if(state.cart.cartItems.length > 0) {
+    state.cart.cartItems.forEach(trxn => {
+      let trxnCost = trxn.quantity * trxn.price;
+      subtotalCost += trxnCost;
+    });
+    totalCost = subtotalCost + shippingFee;
+    cartCosts = {
+      subtotal: subtotalCost,
+      total: totalCost
+    }
   }
   return cartCosts;
 };
