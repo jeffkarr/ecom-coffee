@@ -33,7 +33,7 @@ class Categories extends Component {
         <Navbar color="white" light expand="md" className="category-navbar">
           <Nav navbar>
             <NavItem className="category-nav-item">
-              <NavLink href="/" className="mx-4">
+              <NavLink href="/home" className="mx-4">
                 Home
               </NavLink>
             </NavItem>

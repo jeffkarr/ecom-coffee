@@ -1,0 +1,13 @@
+.landingPic {
+  background-image: url("../../assets/images/Karrs-coffee-and-tea-landing.jpg");
+  background-size: cover;
+  background-position: top;
+  width: 1200px;
+  height: 800px;
+}
+
+#landing-btn {
+  position: relative;
+  top: 300px;
+  left: 650px;
+}
