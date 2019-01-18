@@ -1,0 +1,64 @@
+body {
+    background-color: lightgrey;
+}
+
+.tea-container {
+    float: left;
+    min-height: 500px;
+    max-height: 1200px;
+    min-width: 400px;
+    max-width: 1200px;
+}
+
+.tea-card {
+    width: 300px;
+    height: auto;
+    float: left;
+    display: block;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid transparent;
+}
+
+.tea-card-img {
+    width: 100%;
+    height: 300px;
+}
+
+.tea-card-body {
+    height: 250px;
+    padding-bottom: 0px;
+}
+
+.tea-card-body-title-area {
+    vertical-align: baseline;
+    height: 50px;
+}
+
+.tea-card-body-description-area {
+    vertical-align: text-top;
+    height: 140px;
+}
+
+.tea-qty-area {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+select.tea-qty-select {
+    font-size: 1rem;
+    margin: .5rem;
+    padding-left: .5rem;
+}
+
+.tea-btn-area {
+    height: 50px;
+}
+
+select#tea-qty {
+    width: 60px;
+    vertical-align: middle;
+}

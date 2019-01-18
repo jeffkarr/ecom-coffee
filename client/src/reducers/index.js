@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 import coffeeReducer from "./coffeeReducer";
+import teaReducer from "./teaReducer";
 import cartReducer from "./cartReducer";
 import wishReducer from "./wishReducer";
 
 export default combineReducers({
   coffee: coffeeReducer,
+  tea: teaReducer,
   cart: cartReducer,
   wish: wishReducer
 });

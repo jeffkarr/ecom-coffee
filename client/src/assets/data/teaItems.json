@@ -1,0 +1,52 @@
+{
+  "coffeeItems": [
+    {
+      "itemId": "T1",
+      "category": "tea",
+      "name": "Black Tea",
+      "price": "5.00",
+      "description": "Typically more robust and pronounced flavors. And when brewed appropriately, a higher caffeine content compared to other teas.",
+      "image": "../images/tea/black-tea-tin-display.png"
+    },
+    {
+      "itemId": "T2",
+      "category": "tea",
+      "name": "Green Tea",
+      "price": "5.00",
+      "description": "Green teas tend to have less caffeine (10-30% of coffee). Greens also tend to produce more subtle flavors with many undertones and accents that connoisseurs treasure.",
+      "image": "../images/tea/green-tea-tin-display.png"
+    },
+    {
+      "itemId": "T3",
+      "category": "tea",
+      "name": "Earl Grey Tea",
+      "price": "6.00",
+      "description": "Earl Grey is one of the most recognized flavored teas in the world.",
+      "image": "../images/tea/earl-grey-tin-display.png"
+    },
+    {
+      "itemId": "T4",
+      "category": "tea",
+      "name": "Chamomile Tea",
+      "price": "7.00",
+      "description": "Calming chamomile has been around for ages, dating back thousands of years, at least to ancient Egyptian times. It is most famously known as a relaxing herb.",
+      "image": "../images/tea/chamomile-tea-tin-display.png"
+    },
+    {
+      "itemId": "T5",
+      "category": "tea",
+      "name": "Jasmine Tea",
+      "price": "5.00",
+      "description": "The world soon fell in love with jasmine’s perfumed aroma and delicate flavor and has been craving the glorious blossom ever since.",
+      "image": "../images/tea/jasmine-tea-tin-display.png"
+    },
+    {
+      "itemId": "T6",
+      "category": "tea",
+      "name": "Chai Tea",
+      "price": "7.00",
+      "description": "The Hindi term chai means a mix of spices steeped into a tea-like beverage.",
+      "image": "../images/tea/chai-tea-tin-display.png"
+    }
+  ]
+}

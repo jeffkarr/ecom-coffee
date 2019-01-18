@@ -11,7 +11,7 @@ import { Row, Form } from "reactstrap";
 import { fetchCoffeeItems } from "../../actions/coffeeActions";
 import { fetchWishItems } from "../../actions/wishActions";
 import { addToCart } from "../../actions/cartActions";
-import { addToWishList } from "../../actions/wishActions";
+import { addCoffeeToWish } from "../../actions/wishActions";
 
 import "./CoffeePage.css";
 
@@ -175,7 +175,7 @@ const mapDispatchToProps = {
   fetchCoffeeItems: fetchCoffeeItems,
   fetchWishItems: fetchWishItems,
   onAddToCart: addToCart,
-  onAddToWishList: addToWishList
+  onAddToWishList: addCoffeeToWish
 };
 
 export default connect(
