@@ -1,6 +1,5 @@
 import { 
-  FETCH_COFFEE_ITEMS,
-  ADD_COFFEE_TO_CART } from './types';
+  FETCH_COFFEE_ITEMS } from './types';
 import coffeeJson from "../assets/data/coffeeItems.json";
 
 export const fetchCoffeeItems = () => dispatch => {
@@ -9,11 +8,4 @@ export const fetchCoffeeItems = () => dispatch => {
       type: FETCH_COFFEE_ITEMS,
       payload: coffeeItemsArray
     });
-};
-
-export const addCoffeeToCart = (cartCoffeeItemId) => dispatch => {
-  dispatch({
-    type: ADD_COFFEE_TO_CART,
-    payload: cartCoffeeItemId
-  });
 };

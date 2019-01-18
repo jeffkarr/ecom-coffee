@@ -1,0 +1,64 @@
+body {
+    background-color: lightgrey;
+}
+
+.accessory-container {
+    float: left;
+    min-height: 500px;
+    max-height: 1200px;
+    min-width: 400px;
+    max-width: 1200px;
+}
+
+.accessory-card {
+    width: 300px;
+    height: auto;
+    float: left;
+    display: block;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid transparent;
+}
+
+.accessory-card-img {
+    width: 100%;
+    height: 300px;
+}
+
+.accessory-card-body {
+    height: 200px;
+    padding-bottom: 0px;
+}
+
+.acc-card-body-title-area {
+    vertical-align: baseline;
+    height: 50px;
+}
+
+.acc-card-body-description-area {
+    vertical-align: text-top;
+    height: 110px;
+}
+
+.accessory-qty-area {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+select.accessory-qty-select {
+    font-size: 1rem;
+    margin: .5rem;
+    padding-left: .5rem;
+}
+
+.accessory-btn-area {
+    height: 50px;
+}
+
+select#accessory-qty {
+    width: 60px;
+    vertical-align: middle;
+}

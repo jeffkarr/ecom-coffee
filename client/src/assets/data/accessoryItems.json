@@ -1,0 +1,76 @@
+{
+  "accessoryItems": [
+    {
+      "itemId": "A1",
+      "category": "accessory",
+      "name": "Coffee Cup",
+      "price": "5.00",
+      "description": "Microwave and dishwasher-safe cup offers versatile and convenient use",
+      "image": "../images/accessory/white-coffee-cup.jpg"
+    },
+    {
+      "itemId": "A2",
+      "category": "accessory",
+      "name": "Coffee Mug",
+      "price": "5.00",
+      "description": "Microwave and dishwasher-safe porcelain coffee mug for practical and functional use.",
+      "image": "../images/accessory/white-coffee-mug.jpg"
+    },
+    {
+      "itemId": "A3",
+      "category": "accessory",
+      "name": "Antique French Press Coffee Pot",
+      "price": "20.00",
+      "description": "Nothing beats this antique styled coffee press when it comes to delivering delicious, perfectly brewed hot coffee.",
+      "image": "../images/accessory/french-press-pot1.jpg"
+    },
+    {
+      "itemId": "A4",
+      "category": "accessory",
+      "name": "French Press Coffee Pot",
+      "price": "15.00",
+      "description": "This pot brings out the optimal extraction of the essential oils in the beans to develop their full flavor profile in just four minutes.",
+      "image": "../images/accessory/french-press-pot2.jpg"
+    },
+    {
+      "itemId": "A5",
+      "category": "accessory",
+      "name": "Silver Stovetop Espresso Maker",
+      "price": "25.00",
+      "description": "There are many ways to enjoy an espresso, but there is only one way to create the flavors of a traditional Italian stovetop espresso.",
+      "image": "../images/accessory/stovetop-espresso-maker-silver.jpg"
+    },
+    {
+      "itemId": "A6",
+      "category": "accessory",
+      "name": "Black Stovetop Espresso Maker",
+      "price": "30.00",
+      "description": "A stovetop espresso maker produces a richer and tastier coffee than your regular coffee machine.",
+      "image": "../images/accessory/stovetop-espresso-maker-black.jpg"
+    },
+    {
+      "itemId": "A7",
+      "category": "accessory",
+      "name": "Standard Coffee Maker",
+      "price": "40.00",
+      "description": "The classic coffee maker helps you make rich-tasting, expertly brewed coffee without stress or mess. ",
+      "image": "../images/accessory/coffeemaker1.png"
+    },
+    {
+      "itemId": "A8",
+      "category": "accessory",
+      "name": "Stainless Coffee Maker",
+      "price": "50.00",
+      "description": "Taste perfectly brewed coffee in every sip with this 10-cup coffee maker.",
+      "image": "../images/accessory/coffeemaker2.png"
+    },
+    {
+      "itemId": "A9",
+      "category": "accessory",
+      "name": "Modern Stainless Coffee Maker",
+      "price": "60.00",
+      "description": "If you're a coffee connoisseur, you'll need this sleek and functional 12-Cup coffee maker.",
+      "image": "../images/accessory/coffeemaker3.png"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ import Categories from "../../components/Categories";
 
 import { fetchTeaItems } from "../../actions/teaActions";
 import { fetchWishItems } from "../../actions/wishActions";
-import { addToCart } from "../../actions/cartActions";
+import { addTeaToCart } from "../../actions/cartActions";
 import { addTeaToWish } from "../../actions/wishActions";
 
 import "./TeaPage.css";
@@ -23,7 +23,7 @@ class TeaPage extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.onAddToCart = this.onAddToCart.bind(this);
+    this.onAddTeaToCart = this.onAddTeaToCart.bind(this);
     this.onAddTeaToWish = this.onAddTeaToWish.bind(this);
 
     this.props.fetchTeaItems();
@@ -34,7 +34,7 @@ class TeaPage extends Component {
     this.setState({ teaQty: event.target.value });
   }
 
-  onAddToCart(event) {
+  onAddTeaToCart(event) {
     event.preventDefault(event);
     let cartTeaItemId = event.target.id;
     let cartTeaItemQty = this.state.teaQty;
@@ -52,7 +52,7 @@ class TeaPage extends Component {
       image: tempCartItem[0].image,
       quantity: cartTeaItemQty
     };
-    this.props.onAddToCart(newCartItem);
+    this.props.onAddTeaToCart(newCartItem);
     this.setState({
       teaQty: 1
     });
@@ -144,7 +144,7 @@ class TeaPage extends Component {
                           <i className="far fa-heart" /> Wish List
                       </Button>
                         <Button
-                          onClick={this.onAddToCart}
+                          onClick={this.onAddTeaToCart}
                           name="cartBtn"
                           id={item.itemId}
                           color="danger"
@@ -181,7 +181,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   fetchTeaItems: fetchTeaItems,
   fetchWishItems: fetchWishItems,
-  onAddToCart: addToCart,
+  onAddTeaToCart: addTeaToCart,
   onAddTeaToWish: addTeaToWish
 };
 

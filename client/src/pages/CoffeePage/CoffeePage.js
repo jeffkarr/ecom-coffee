@@ -9,9 +9,9 @@ import { Card, CardImg, CardBody, Button } from "reactstrap";
 import { Row, Form } from "reactstrap";
 
 import { fetchCoffeeItems } from "../../actions/coffeeActions";
-import { fetchWishItems } from "../../actions/wishActions";
-import { addToCart } from "../../actions/cartActions";
-import { addCoffeeToWish } from "../../actions/wishActions";
+import { addCoffeeToCart } from "../../actions/cartActions";
+import { fetchWishItems, addCoffeeToWish } from "../../actions/wishActions";
+
 
 import "./CoffeePage.css";
 
@@ -23,8 +23,8 @@ class CoffeePage extends Component {
       coffeeQty: 1
     };
     this.handleChange = this.handleChange.bind(this);
-    this.onAddToCart = this.onAddToCart.bind(this);
-    this.onAddToWishList = this.onAddToWishList.bind(this);
+    this.onAddCoffeeToCart = this.onAddCoffeeToCart.bind(this);
+    this.onAddCoffeeToWish = this.onAddCoffeeToWish.bind(this);
  
     this.props.fetchCoffeeItems();
   }
@@ -33,7 +33,7 @@ class CoffeePage extends Component {
     this.setState({ coffeeQty: event.target.value });
   }
  
-  onAddToCart(event) {
+  onAddCoffeeToCart(event) {
     event.preventDefault(event);
     let cartCoffeeItemId = event.target.id;
     let cartCoffeeItemQty = this.state.coffeeQty;
@@ -49,13 +49,13 @@ class CoffeePage extends Component {
       image: tempCartItem[0].image,
       quantity: cartCoffeeItemQty
     };
-    this.props.onAddToCart(newCartItem);
+    this.props.onAddCoffeeToCart(newCartItem);
     this.setState({
       coffeeQty: 1
     });
   }
 
-  onAddToWishList(event) {
+  onAddCoffeeToWish(event) {
     event.preventDefault(event);
     let wishCoffeeItemId = event.target.id;
     let wishCoffeeItemQty = this.state.coffeeQty;
@@ -71,7 +71,7 @@ class CoffeePage extends Component {
       image: tempWishItem[0].image,
       quantity: wishCoffeeItemQty
     };
-    this.props.onAddToWishList(newWishItem);
+    this.props.onAddCoffeeToWish(newWishItem);
     this.setState({
       coffeeQty: 1
     });
@@ -129,7 +129,7 @@ class CoffeePage extends Component {
                     </div>
                     <div className="coffee-btn-area">
                       <Button
-                        onClick={this.onAddToWishList}
+                        onClick={this.onAddCoffeeToWish}
                         name="wishBtn"
                         id={item.itemId}
                         color="danger"
@@ -138,7 +138,7 @@ class CoffeePage extends Component {
                         <i className="far fa-heart" /> Wish List
                       </Button>
                       <Button
-                        onClick={this.onAddToCart}
+                        onClick={this.onAddCoffeeToCart}
                         name="cartBtn"
                         id={item.itemId}
                         color="danger"
@@ -174,8 +174,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   fetchCoffeeItems: fetchCoffeeItems,
   fetchWishItems: fetchWishItems,
-  onAddToCart: addToCart,
-  onAddToWishList: addCoffeeToWish
+  onAddCoffeeToCart: addCoffeeToCart,
+  onAddCoffeeToWish: addCoffeeToWish
 };
 
 export default connect(

@@ -2,6 +2,7 @@ import {
   FETCH_WISH_ITEMS,
   ADD_COFFEE_TO_WISH,
   ADD_TEA_TO_WISH,
+  ADD_ACCESSORY_TO_WISH,
   WISH_CHECKOUT,
   REMOVE_WISH_ITEM
 } from "../actions/types";
@@ -21,6 +22,9 @@ export default function (state = initialState, action) {
       state.wishItems.push(action.payload);
       return { ...state, wishItems: state.wishItems };
     case ADD_TEA_TO_WISH:
+      state.wishItems.push(action.payload);
+      return { ...state, wishItems: state.wishItems };
+    case ADD_ACCESSORY_TO_WISH:
       state.wishItems.push(action.payload);
       return { ...state, wishItems: state.wishItems };
     case REMOVE_WISH_ITEM:

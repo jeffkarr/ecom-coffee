@@ -1,5 +1,7 @@
 import { FETCH_CART_ITEMS, 
         ADD_COFFEE_TO_CART,
+        ADD_TEA_TO_CART,
+        ADD_ACCESSORY_TO_CART,
         REMOVE_CART_ITEM, 
         CART_CHECKOUT,
         WISH_CHECKOUT } from "./types";
@@ -10,10 +12,24 @@ export const fetchCartItems = () => dispatch => {
   });
 };
 
-export const addToCart = newCartItem => dispatch => {
+export const addCoffeeToCart = cartCoffeeItemId => dispatch => {
   dispatch({
     type: ADD_COFFEE_TO_CART,
-    payload: newCartItem
+    payload: cartCoffeeItemId
+  });
+};
+
+export const addTeaToCart = cartTeaItemId => dispatch => {
+  dispatch({
+    type: ADD_TEA_TO_CART,
+    payload: cartTeaItemId
+  });
+};
+
+export const addAccessoryToCart = cartAccessoryItemId => dispatch => {
+  dispatch({
+    type: ADD_ACCESSORY_TO_CART,
+    payload: cartAccessoryItemId
   });
 };
 

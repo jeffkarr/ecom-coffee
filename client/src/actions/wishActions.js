@@ -2,6 +2,7 @@ import {
   FETCH_WISH_ITEMS,
   ADD_COFFEE_TO_WISH,
   ADD_TEA_TO_WISH,
+  ADD_ACCESSORY_TO_WISH,
   REMOVE_WISH_ITEM,
   WISH_CHECKOUT
 } from "./types";
@@ -22,6 +23,13 @@ export const addCoffeeToWish = newWishItem => dispatch => {
 export const addTeaToWish = newWishItem => dispatch => {
   dispatch({
     type: ADD_TEA_TO_WISH,
+    payload: newWishItem
+  });
+};
+
+export const addAccessoryToWish = newWishItem => dispatch => {
+  dispatch({
+    type: ADD_ACCESSORY_TO_WISH,
     payload: newWishItem
   });
 };
