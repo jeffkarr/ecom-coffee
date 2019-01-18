@@ -1,0 +1,52 @@
+{
+  "dealItems": [
+    {
+      "itemId": "D1",
+      "category": "deal",
+      "name": "Ceramic Tea Pot",
+      "price": "8.00",
+      "description": "This fine ceramic teapot is suitable for everyday household use. It has a 32 ounce capacity. Dishwasher and microwave safe.",
+      "image": "../images/deal/ceramic-tea-kettle.jpg"
+    },
+    {
+      "itemId": "D2",
+      "category": "deal",
+      "name": "Metal Tea Infuser",
+      "price": "3.00",
+      "description": "A great gift for tea lovers! Steeps perfect cups of loose-leaf tea and features a press handle for easy cleanup.",
+      "image": "../images/deal/tea-infuser.jpg"
+    },
+    {
+      "itemId": "D3",
+      "category": "deal",
+      "name": "Hand Coffee Grinder",
+      "price": "15.00",
+      "description": "A modern, sleek look with a glass container.",
+      "image": "../images/deal/coffee-grinder.jpg"
+    },
+    {
+      "itemId": "D4",
+      "category": "deal",
+      "name": "200 Count #4 Coffee Filters",
+      "price": "3.00",
+      "description": "Microfine perforations allow the full coffee flavor to filter through for a rich, flavorful cup of coffee.",
+      "image": "../images/deal/coffee-filters.jpg"
+    },
+    {
+      "itemId": "D5",
+      "category": "deal",
+      "name": "Stoneware Sugar Bowl and Creamer Set",
+      "price": "20.00",
+      "description": "Microwave and dishwasher safe. Creamer holds 12 ounces; sugar bowl with lid holds 1 cup.",
+      "image": "../images/deal/sugar-bowl-creamer-set.jpg"
+    },
+    {
+      "itemId": "D6",
+      "category": "deal",
+      "name": "Semi Automatic Espresso Machine",
+      "price": "160.00",
+      "description": "This Espresso Machine brings the coffeehouse to your home. So simple to use!",
+      "image": "../images/deal/espresso-machine.jpg"
+    }
+  ]
+}

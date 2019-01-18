@@ -2,6 +2,7 @@ import { FETCH_CART_ITEMS,
         ADD_COFFEE_TO_CART,
         ADD_TEA_TO_CART,
         ADD_ACCESSORY_TO_CART,
+        ADD_DEAL_TO_CART,
         CART_CHECKOUT,
         REMOVE_CART_ITEM } from "../actions/types";
 
@@ -32,6 +33,12 @@ export default function (state = initialState, action) {
         cartItems: state.cartItems,
       };
     case ADD_ACCESSORY_TO_CART:
+      state.cartItems.push(action.payload);
+      return {
+        ...state,
+        cartItems: state.cartItems,
+      };
+    case ADD_DEAL_TO_CART:
       state.cartItems.push(action.payload);
       return {
         ...state,

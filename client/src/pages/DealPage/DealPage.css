@@ -1,0 +1,76 @@
+body {
+  background-color: lightgrey;
+}
+.deal-container {
+  float: left;
+  min-height: 500px;
+  max-height: 1200px;
+  min-width: 400px;
+  max-width: 1200px;
+}
+.deal-card {
+  width: 300px;
+  height: auto;
+  float: left;
+  display: block;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid transparent;
+}
+.deal-card-img {
+  width: 100%;
+  height: 250px;
+  z-index: -1;
+}
+.deal-overlay {
+  position: absolute;
+  margin-top: 0;
+  width: 35%;
+  height: 8%;
+  float: left;
+  background-color: red;
+  z-index: 2;
+}
+.deal-logo {
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 10px;
+  color: yellow;
+  font-weight: bold;
+  z-index: 3;
+}
+.deal-card-body {
+  height: 21  0px;
+  padding-bottom: 0px;
+}
+.deal-card-body-title-area {
+  vertical-align: baseline;
+  height: 50px;
+}
+.deal-card-body-description-area {
+  vertical-align: text-top;
+  height: 110px;
+}
+.deal-card-body-price-area {
+  vertical-align: text-top;
+  height: 40px;
+}
+.deal-qty-area {
+  text-align: center;
+  padding-bottom: 10px;
+}
+select.deal-qty-select {
+  font-size: 1rem;
+  margin: .5rem;
+  padding-left: .5rem;
+}
+.deal-btn-area {
+  height: 50px;
+}
+select#deal-qty {
+  width: 60px;
+  vertical-align: middle;
+}
